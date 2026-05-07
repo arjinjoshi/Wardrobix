@@ -22,11 +22,13 @@ export const useAdminOrdersStore = create<AdminOrdersStore>((set) => ({
       set({ loading: true });
 
       const response = await extractAdminOrders();
+      console.log("Fetch successful:", response);
       set({
         orders: response?.items ?? [],
         loading: false,
       });
-    } catch {
+    } catch(error) {
+      console.error("FetchOrders Error:", error);
       set({
         orders: [],
         loading: false,

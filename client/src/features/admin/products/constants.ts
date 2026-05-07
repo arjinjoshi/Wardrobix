@@ -9,6 +9,7 @@ export const BRANDS = [
   "Mango",
   "Calvin Klein",
   "Tommy Hilfiger",
+  "Others"
 ] as const;
 
 export const SIZE_OPTIONS = ["S", "M", "L", "XL"] as const;

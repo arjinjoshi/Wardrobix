@@ -34,7 +34,7 @@ export const syncUserWithDB = async (clerkUserId: string) => {
     ? "admin" 
     : (shouldBeAdmin ? "admin" : (existingUser?.role || "user"));
 
-  // 4. DB Operation (Upsert)
+  // 4. DB Operation 
   return await User.findOneAndUpdate(
     { clerkUserId },
     { clerkUserId, email, name, role: nextRole },

@@ -71,7 +71,7 @@ export function AdminSidebar() {
         <div className="flex items-center gap-3">
           <Store className="w-10 h-10" />
           <span className="text-[25px] font-semibold text-foreground">
-            E-Shopify
+            Wardrobix       
           </span>
         </div>
       </div>

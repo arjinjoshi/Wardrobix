@@ -1,12 +1,13 @@
-import { ok } from "node:assert";
+import { ok } from "../../utils/envelope";
 import { asyncHandler } from "../../utils/asyncHandler";
 import * as orderService from "../../services/admin/order"
 import { requireText } from "../../utils/helpers";
 import { AppError } from "../../utils/AppError";
 
-export const createOrder = asyncHandler(async (req, res) => {
+export const getOrder = asyncHandler(async (req, res) => {
     // Calling the service with the same name
-    const items = await orderService.createOrder();
+    const items = await orderService.getOrder();
+    console.log(items);
   
     res.json(
       ok({

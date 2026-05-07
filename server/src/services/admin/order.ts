@@ -27,13 +27,15 @@ export const ALLOWED_ORDER_STATUSES = [
     createdAt: Date;
   };
 
-export const createOrder = async () => {
+export const getOrder = async () => {
   const orders = await Order.find()
     .select(
       "customerName customerEmail totalItems totalAmount paymentStatus orderStatus paidAt deliveredAt returnedAt createdAt"
     )
     .sort({ createdAt: -1 })
     .lean<AdminOrderRow[]>();
+
+    // console.log(orders);
 
   return orders.map((orderItem) => ({
     _id: String(orderItem._id),

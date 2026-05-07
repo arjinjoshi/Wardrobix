@@ -38,7 +38,7 @@ adminOrderRouter.use(requireAdmin);
 
 adminOrderRouter.get(
   "/orders",
- orderController.createOrder
+ orderController.getOrder
 );
 
 adminOrderRouter.patch(

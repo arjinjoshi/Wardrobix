@@ -14,7 +14,7 @@ cloudinary.config({
 
 export function uploadSingleBufferToCloudinary(
   fileBuffer: Buffer,
-  folder = "ecommerce-monster-video/products",
+  folder = "ecommerce-monster-video/products"
 ): Promise<CloudinaryUploadResult> {
   return new Promise((resolve, reject) => {
     const uploadStream = cloudinary.uploader.upload_stream(
@@ -35,7 +35,7 @@ export function uploadSingleBufferToCloudinary(
           url: result.secure_url,
           publicId: result.public_id,
         });
-      },
+      }
     );
 
     streamifier.createReadStream(fileBuffer).pipe(uploadStream);
@@ -44,9 +44,9 @@ export function uploadSingleBufferToCloudinary(
 
 export async function uploadManyBuffersToCloudinary(
   files: Buffer[],
-  folder = "ecommerce-monster-video/products",
+  folder = "Wardrobix/products"
 ): Promise<CloudinaryUploadResult[]> {
   return Promise.all(
-    files.map((file) => uploadSingleBufferToCloudinary(file, folder)),
+    files.map((file) => uploadSingleBufferToCloudinary(file, folder))
   );
 }

@@ -112,21 +112,21 @@ const OrderSchema = new Schema<Order>(
       enum: ["placed", "shipped", "delivered", "returned"],
       default: "placed",
     },
-    razorpayOrderId: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+    // razorpayOrderId: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
     paymentId: {
       type: String,
       default: "",
       trim: true,
     },
-    khaltiPidx: {
-      type: String,
-      default: "",
-      trim: true,
-    },
+    // khaltiPidx: {
+    //   type: String,
+    //   default: "",
+    //   trim: true,
+    // },
     paidAt: {
       type: Date,
       default: null,

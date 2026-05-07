@@ -7,6 +7,7 @@ import type {
 
 export async function extractAdminOrders() {
   return apiGet<AdminOrdersResponse>("/admin/orders");
+   
 }
 
 export async function updateAdminOrderStatus(
