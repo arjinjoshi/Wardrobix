@@ -27,20 +27,26 @@ async function mainEntryFunction() {
 
   const app = express();
 
-  app.use(cors({
-    origin: 'http://localhost:5173',  
-    credentials: true                   
-  }));
+  const origins = process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(",").map((origin) => origin.trim())
+    : "http://localhost:5173";
+
+  app.use(
+    cors({
+      origin: origins,
+      credentials: true,
+    })
+  );
 
   app.use(express.json());
   app.use(morgan("dev"));
-  
+
   app.get("/health", (_req, res) => {
     res.status(200).json(ok({ message: "Server is healthy/in running state" }));
   });
-  
+
   app.use(clerkMiddleware());
-  
+
   // auth routes
   app.use("/auth", authRouter);
 
