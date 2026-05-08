@@ -18,7 +18,7 @@ export function mapBanner(item: BannerDocument): AdminBannerItem {
   };
 }
 
-const BANNER_FOLDER = "ecommerce-monster-video/banners";
+const BANNER_FOLDER = "Wardrobix-Banner/banners";
 
 export const getBanners = async () => {
   const items = await Banner.find().sort({ createdAt: -1 });

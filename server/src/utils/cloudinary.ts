@@ -14,7 +14,7 @@ cloudinary.config({
 
 export function uploadSingleBufferToCloudinary(
   fileBuffer: Buffer,
-  folder = "ecommerce-monster-video/products"
+  folder = "Wardrobix-Banner/products"
 ): Promise<CloudinaryUploadResult> {
   return new Promise((resolve, reject) => {
     const uploadStream = cloudinary.uploader.upload_stream(
